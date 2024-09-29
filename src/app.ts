@@ -1,8 +1,11 @@
 export { App }; 
 
+import { ConsoleLogger } from "./impl/console-logger";
+import { FFMegExecutor } from "./impl/ffmpeg-executor";
+
 class App {
-	run() {
-		console.log("Done");
+	async run() {
+		new FFMegExecutor(ConsoleLogger.getLogger()).execute()
 	}
 }
 
